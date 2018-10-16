@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+@font-face{
+		font-family: "brush";
+		src: url("blowbrush.otf");
+	}
+
+	#logo{
+
+		margin: auto;
+		margin-top: 100px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 800px;
+		height: 200px;
+		border-radius: 5px;
+		font: 200px brush;
+		color: #BFD7E3;
+	}
+
+	#entrar{
+
+		position: absolute;
+		top: 100px;
+		right: 250px;
+		bottom: 0px;
+		left: 0px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #F9D864;
+		border-radius: 10px;
+		width: 145px;
+		height: 80px;
+		font: 50px Arial;
+		color: #25678B;
+		cursor: pointer;
+		border-color: #F9D864;
+	}
+	#entrar:hover{
+		transition: all 1s ease;
+		background-color: #25678B;
+		color: #F9D864;
+	}
+
+	#botaoE{
+		position: absolute;
+		top: 270px;
+		 left: 105px;
+		 width: 80px;
+		 height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content:center;
+		background-color: #F9D864;
+		color: #0D405C;
+		border-radius: 5px;
+    border-color: #F9D864;
+		cursor: pointer;
+		font: 20px Arial;
+		transition: 1s;
+	}
+
+	#botaoE:hover{
+		background-color: #25678B;
+		color: #F9D864;
+	}
+
+	#cad{
+
+		position: absolute;
+		top: 100px;
+		bottom: 0px;
+		left: 300px;
+		right: 100px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #F9D864;
+		border-radius: 10px;
+		width: 230px;
+		height: 80px;
+		font: 50px Arial;
+		color: #25678B;
+		cursor: pointer;
+		border-color: #F9D864;
+	}
+	#cad:hover{
+		transition: all 1s ease;
+		background-color: #25678B;
+		color: #F9D864;
+	}
+
+	#login{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 100px;
+		width: 300px;
+		height: 400px;
+		margin: auto;
+		border-radius: 10px;
+		background-color: #0D405C;
+		display: none;
+	}
+
+
+
+	body{
+	background-color: #1f7dab;
+	}

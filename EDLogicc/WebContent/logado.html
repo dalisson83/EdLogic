@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EDLogic</title>
+	<link rel="shortcut icon" href="title_icon.jpg">
+	<meta charset="utf-8">
+	<!-- background-color: #25678B; -->
+	<style type="text/css">
+
+		@font-face{
+			font-family: 'hp';
+			src: url('harryp.ttf');
+		}
+		@font-face{
+			font-family: 'pirate';
+			src: url('pirate.ttf');
+		}
+
+		body{
+
+			background-image: url('uni_fundo.jpg');
+		}
+
+		.centro{
+
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+		}
+
+		.nivel{
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+			width: 300px;
+			height: 400px;
+			border: solid black;
+			border-radius: 10px;
+
+		}
+		.checar:hover{
+			transition: all 1.5s ease;
+			background-color: black;
+			color: white;
+
+      }
+
+
+	</style>
+</head>
+<body>
+
+	<div id = 'niveis'  class = "nivel" style="background-image: url('fundo.jpg');">
+		<div style = "font: 40px sans-serif; position: absolute; left: 75px; top: 15px; width: 150px; border:solid; border-bottom: 5px solid; display: flex; justify-content: center; color: black; border-radius: 10px; background-color: white;">Níveis</div>
+		<button id = 'iniciante'   style="  position: absolute; top: 120px; left: 20px; width: 260px; font: 30px sans-serif; border: solid; border-radius: 10px; display: flex; justify-content: center; cursor: pointer;">Iniciante</button>
+		<button id = 'normal'   style=" background-color: grey; position: absolute; top: 180px; left: 20px; width: 260px; font: 30px sans-serif; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center;">Normal
+		</button>
+		<button id = 'dificil' style=" background-color: grey; position: absolute; top: 240px; left: 20px; width: 260px; font: 30px sans-serif; border: solid; border-radius: 10px; display: flex; justify-content: center;">Difícil
+		</button>
+		<button id = 'genio'  style=" background-color: grey; position: absolute; top: 300px; left: 20px; width: 260px; font: 30px sans-serif; border: solid; border-radius: 10px; display: flex; justify-content: center;">Gênio
+		</button>
+
+	</div>
+
+	<div id="niveisIni" class="nivel" style="display: none; background-image: url('iniciante_fundo.jpg');">
+
+		<button id = 'back' style="position: absolute; left: 30px; top: 20px; width: 25px; height: 25px; border: hidden; border-radius: 5px; background-image: url('back.png'); cursor: pointer;"></button>
+		<div id = 'nvIniciante'  style="font: 60px hp; width: 300px; border-radius: 10px solid; display: flex; justify-content: center; color: white; position: absolute; top: 60px; color: black;">Iniciante</div>
+		<button id = 'ini1'style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 130px; left: 70px; font: 33px hp; cursor: pointer; ">1</button>
+		<button id = "ini2" style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 130px; left: 135px; font: 33px hp; background-color: gray;">2</button>
+		<button id = "ini3" style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 130px; left: 200px; font: 33px hp; background-color: gray;">3</button>
+		<button id = 'ini4' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 185px; left: 70px; font: 33px hp; background-color: gray;">4</button>
+		<button id = 'ini5' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 185px; left: 135px; font: 33px hp; background-color: gray;">5</button>
+		<button id = 'ini6' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 185px; left: 200px; font: 33px hp; background-color: gray;">6</button>
+		<button id = 'ini7' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 240px; left: 70px; font: 33px hp; background-color: gray;">7</button>
+		<button id = 'ini8' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 240px; left: 135px; font: 33px hp; background-color: gray;">8</button>
+		<button id = 'ini9' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 240px; left: 200px; font: 33px hp; background-color: #781717;">9</button>
+	</div>
+
+	<div id="niveisNormal" class="nivel" style="display: none; background-image: url('iniciante_fundo.jpg');">
+
+		<button id = 'back2' style="position: absolute; left: 30px; top: 20px; width: 25px; height: 25px; border: hidden; border-radius: 5px; background-image: url('back.png'); cursor: pointer;"></button>
+		<div id = 'nvNormal'  style="font: 60px hp; width: 300px; border-radius: 10px solid; display: flex; justify-content: center; color: white; position: absolute; top: 60px; color: black;">Normal</div>
+		<button id = 'normal1'style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 130px; left: 70px; font: 33px hp; cursor: pointer; ">1</button>
+		<button id = "normal2" style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 130px; left: 135px; font: 33px hp; background-color: gray;">2</button>
+		<button id = "normal3" style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 130px; left: 200px; font: 33px hp; background-color: gray;">3</button>
+		<button id = 'normal4' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 185px; left: 70px; font: 33px hp; background-color: gray;">4</button>
+		<button id = 'normal5' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 185px; left: 135px; font: 33px hp; background-color: gray;">5</button>
+		<button id = 'normal6' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 185px; left: 200px; font: 33px hp; background-color: gray;">6</button>
+		<button id = 'normal7' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 240px; left: 70px; font: 33px hp; background-color: gray;">7</button>
+		<button id = 'normal8' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 240px; left: 135px; font: 33px hp; background-color: gray;">8</button>
+		<button id = 'normal9' style="width: 35px; height: 40px; border: solid; border-radius: 10px; display: flex; justify-content: center; align-items: center; position: absolute; top: 240px; left: 200px; font: 33px hp; background-color: #781717;">9</button>
+	</div>
+
+	<div id = 'qstIni' style=" width: 700px; height: 500px; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; display: none; align-items: center; justify-content: center; background-image: url('fundo_madeira.jpg'); border: hidden; border-radius: 10px;">
+		<div id = 'cont' style="font: 40px hp; color: black; position: absolute; left: 10px; top: 20px;">I - 1</div>
+		<div style="width: 500px; height: 300px; position: absolute; bottom: 190px; background-image: url('quadro.jpg'); border: hidden; border-radius: 10px;">
+			<div id = "initext1" style="font: 40px hp; color: white; position: absolute; left: 135px;">
+				<p>A + A + B = 21<br>B + A - B = 9<br>A + B + C = 24<br>D * D + C = 37</p>
+				<p style="position: absolute; left: 70px; top: 185px;">D = ?</p>
+			</div>
+			<div id = "initext2" class="centro" style="display: none; background-image: url('rosav.jpg'); width: 300px; height: 200px; border: hidden; border-radius: 10px;">
+				<p style="position: absolute; left: 35px; top: 57px; font: 30px hp;">?</p>
+
+			</div>
+			<div id = "initext3" class="centro" style=" display: none; background-image: url('qst3ini.png'); width: 139px; height: 116px; border: hidden; border-radius: 10px;">
+			</div>
+			<div id="initext4" style="font: 150px hp; display: none; width: 300px; height: 200px; position: absolute; left: 90px; top: 45px; color: white;">NADA</div>
+			<div id="initext5" style="font: 50px hp; position: absolute; left: 250px; top: -42px; color: white; display: none;">
+				<p>1<br>2<br>4<br>8<br>?</p>
+			</div>
+			<div id="initext6" class="centro" style="position: absolute; background-image: url('qst6ini.png'); width: 242px; height: 194px; border: hidden; border-radius: 10px;"></div>
+			<div id="initext7" class="centro" style="background-image: url('qst7ini.png'); top: 30px; width: 450px; height: 104px; display: none; border-bottom: hidden; border-radius: 10px;">
+				<p style="font: 100px hp; position: absolute; top: -90px; left: 145px;">4</p>
+				<p style="font: 100px hp; position: absolute; top: -90px; left: 385px;">?</p>
+			</div>
+			<div id="initext8" style="font: 40px hp; display: none; color: white; position: absolute; left: 250px;">
+				<p>1<br>9<br>25<br>49<br>?</p>
+			</div>
+			<div id="initext9" class="centro" style="font: 40px hp; position: absolute; left: 80px; color: white; width: 250px; height: 40px; display: none;">A - E - I - ?</div>
+		</div>
+		<input type="text" name="" id = "respostas" style="position: absolute; top: 350px; height: 40px; border: solid; border-radius: 10px; font: 30px hp">
+		<button id = "conferir" class = "checar"  style="position: absolute; top: 420px; border: solid; border-radius: 10px; font: 30px hp; cursor: pointer;">Conferir</button>
+		<div id = "incorreta" style="position: absolute; top: 315px; font: 30px hp; color: #6D0101; display: none;">Resposta Incorreta!</div>
+		<div id = "correta" style="position: absolute; top: 315px; font: 30px hp; color: #036C0E; display: none;">Resposta Correta!</div>
+		<button id = "voltar" class = "checar" style="font: 30px hp; border: solid; border-radius: 10px; position: absolute; left: 40px; top: 430px; cursor: pointer;">Voltar</button>
+		<button id = "proximo" class = "checar" style="font: 30px hp; border: solid red; border-radius: 10px; position: absolute; left: 560px; top: 430px;">Próximo</button>
+	</div>
+
+
+	<div id = 'qstNormal' style=" width: 700px; height: 500px; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; display: none; align-items: center; justify-content: center; background-image: url('fundo_madeira.jpg'); border: hidden; border-radius: 10px;">
+		<div id = 'cont2' style="font: 40px hp; color: black; position: absolute; left: 10px; top: 20px;">N - 1</div>
+		<div style="width: 500px; height: 300px; position: absolute; bottom: 190px; background-image: url('quadro.jpg'); border: hidden; border-radius: 10px;">
+			<div id = "normaltext1" style="font: 40px hp; color: white; position: absolute; left:50px;">
+				<p>"Se ontem fosse amanhã hoje seria sexta-feira"<br>Que dia isto foi dito ?</p>
+			</div>
+
+		<input type="text" name="" id = "resposta2" style="position: absolute; top: 350px; height: 40px; border: solid; border-radius: 10px; font: 30px hp; left: 127px;">
+		<button id = "conferir2" class = "checar"  style="position: absolute; top: 420px; border: solid; border-radius: 10px; font: 30px hp; cursor: pointer; left: 220px;">Conferir</button>
+		<div id = "incorreta2" style="position: absolute; top: 315px; font: 30px hp; color: #6D0101; display: none; left: 194px;">Resposta Incorreta!</div>
+		<div id = "correta2" style="position: absolute; top: 315px; font: 30px hp; color: #036C0E; display: none;left: 194px;">Resposta Correta!</div>
+		<button id = "voltar2" class = "checar" style="font: 30px hp; border: solid; border-radius: 10px; position: absolute; left: -10px; top: 425px; cursor: pointer;">Voltar</button>
+		<button id = "proximo2" class = "checar" style="font: 30px hp; border: solid red; border-radius: 10px; position: absolute; left: 450px; top: 420px;">Próximo</button>
+	</div>
+
+	<script type="text/javascript">
+
+		var iniciante = document.getElementById('iniciante'), cont2 = document.getElementById('cont2'), correta2 = document.getElementById('correta2'), incorreta2 = document.getElementById('incorreta2'), conferir2 = document.getElementById('conferir2'), resposta2 = document.getElementById('resposta2'), voltar2 = document.getElementById('voltar2'), proximo2 = document.getElementById('proximo2'), back2 = document.getElementById('back2'), normal = document.getElementById('normal'), normal1 = document.getElementById('normal1'), normaltext1 = document.getElementById('normaltext1'), niveis = document.getElementById('niveis'), niveisIni = document.getElementById('niveisIni'), ini1 = document.getElementById('ini1'), qstIni = document.getElementById('qstIni'), conferir = document.getElementById('conferir'), respostas = document.getElementById('respostas'), cont = document.getElementById('cont'), incorreta = document.getElementById('incorreta'), correta = document.getElementById('correta'), voltar = document.getElementById('voltar'), proximo = document.getElementById('proximo'), ini2 = document.getElementById('ini2'), ini3 = document.getElementById('ini3'), initext1 = document.getElementById('initext1'), initext2 = document.getElementById('initext2'), initext3 = document.getElementById('initext3'), back = document.getElementById('back'), initext4 = document.getElementById('initext4'), ini4 = document.getElementById('ini4'), initext5 = document.getElementById('initext5'), ini5 = document.getElementById('ini5'), initext6 = document.getElementById('initext6'), ini6 = document.getElementById('ini6'), initext7 = document.getElementById('initext7'), ini7 = document.getElementById('ini7'), initext8 = document.getElementById('initext8'), ini8 = document.getElementById('ini8'), initext9 = document.getElementById('initext9'), ini9 = document.getElementById('ini9');
+
+
+		voltar.addEventListener('click', function(){
+
+			qstIni.style.display = 'none';
+			niveisIni.style.display = 'block';
+
+		})
+		back.addEventListener('click', function(){
+
+			niveisIni.style.display = 'none';
+			niveis.style.display = 'block';
+		})
+
+		back2.addEventListener('click', function(){
+
+			niveisNormal.style.display = 'none';
+			niveis.style.display = 'block';
+		})
+
+		proximo2.addEventListener('click', function(){
+
+			if(proximo2.style.border=="solid green" && cont2.innerText=="N - 1"){
+
+
+			}
+})
+		proximo.addEventListener('click', function(){
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 1"){
+
+				respostas.type = 'text';
+				cont.innerText = "I - 2";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'block';
+			}
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 2"){
+
+				respostas.type = 'number';
+				cont.innerText = "I - 3";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'block';
+
+			}
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 3"){
+
+				cont.innerText = "I - 4";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext3.style.display = 'none';
+				respostas.type = 'text';
+				initext4.style.display = 'block';
+			}
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 4"){
+
+				cont.innerText = "I - 5";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext4.style.display = 'none';
+				respostas.type = 'number';
+				initext5.style.display = 'block';
+			}
+
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 5"){
+
+				cont.innerText = "I - 6";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				respostas.type = 'number';
+				initext5.style.display = 'none';
+				initext6.style.display = 'block';
+			}
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 6"){
+
+				cont.innerText = "I - 7";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				respostas.type = 'number';
+				initext6.style.display = 'none';
+				initext7.style.display = 'block';
+			}
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 7"){
+
+				cont.innerText = "I - 8";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				respostas.type = 'number';
+				initext7.style.display = 'none';
+				initext8.style.display = 'block';
+			}
+
+			if(proximo.style.border=="solid green" && cont.innerText=="I - 8"){
+
+				cont.innerText = "I - 9";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				respostas.type = 'text';
+				initext8.style.display = 'none';
+				initext9.style.display = 'block';
+			}
+		})
+
+		iniciante.addEventListener('click', function(){
+
+			niveis.style.display = 'none';
+			niveisIni.style.display = 'block';
+			document.body.style = "background-image: url('uni_fundo.jpg')";
+		})
+
+		normal.addEventListener('click', function(){
+
+			if(normal.style.cursor=='pointer'){
+				niveis.style.display = 'none';
+				niveisNormal.style.display = 'block';
+		}
+		})
+
+		ini1.addEventListener('click', function(){
+
+			respostas.type = 'number';
+			niveisIni.style.display = 'none';
+			qstIni.style.display = 'flex';
+			initext1.style.display = 'block';
+			initext2.style.display = 'none';
+			initext3.style.display = 'none';
+			initext4.style.display = 'none';
+			initext5.style.display = 'none';
+			initext6.style.display = 'none';
+			initext7.style.display = 'none';
+			initext8.style.display = 'none';
+			initext9.style.display = 'none';
+			cont.innerText = 'I - 1';
+		})
+		ini2.addEventListener('click', function(){
+
+			if(ini2.style.cursor=='pointer'){
+
+				respostas.type = 'text';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = "I - 2";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'block';
+				initext3.style.display = 'none';
+				initext4.style.display = 'none';
+				initext5.style.display = 'none';
+				initext6.style.display = 'none';
+				initext7.style.display = 'none';
+				initext8.style.display = 'none';
+				initext9.style.display = 'none';
+			}
+
+		})
+		ini3.addEventListener('click', function(){
+
+
+			if(ini3.style.cursor=='pointer'){
+
+				respostas.type = 'number';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = "I - 3";
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'block';
+				initext4.style.display = 'none';
+				initext5.style.display = 'none';
+				initext6.style.display = 'none';
+				initext7.style.display = 'none';
+				initext8.style.display = 'none';
+				initext9.style.display = 'none';
+			}
+
+		})
+		ini4.addEventListener('click', function(){
+
+			if(ini4.style.cursor=='pointer'){
+
+				respostas.type = 'text';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = 'I - 4';
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'none';
+				initext4.style.display = 'block';
+				initext5.style.display = 'none';
+				initext6.style.display = 'none';
+				initext7.style.display = 'none';
+				initext8.style.display = 'none';
+				initext9.style.display = 'none';
+			}
+		})
+		ini5.addEventListener('click', function(){
+
+			if(ini5.style.cursor=='pointer'){
+
+				respostas.type = 'number';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = 'I - 5';
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'none';
+				initext4.style.display = 'none';
+				initext5.style.display = 'block';
+				initext6.style.display = 'none';
+				initext7.style.display = 'none';
+				initext8.style.display = 'none';
+				initext9.style.display = 'none';
+			}
+		})
+		ini6.addEventListener('click', function(){
+
+			if(ini6.style.cursor=='pointer'){
+
+				respostas.type = 'number';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = 'I - 6';
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'none';
+				initext4.style.display = 'none';
+				initext5.style.display = 'none';
+				initext6.style.display = 'block';
+				initext7.style.display = 'none';
+				initext8.style.display = 'none';
+				initext9.style.display = 'none';
+			}
+		})
+		ini7.addEventListener('click', function(){
+
+			if(ini7.style.cursor=='pointer'){
+
+				respostas.type = 'number';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = 'I - 7';
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'none';
+				initext4.style.display = 'none';
+				initext5.style.display = 'none';
+				initext6.style.display = 'none';
+				initext7.style.display = 'block';
+				initext8.style.display = 'none';
+				initext9.style.display = 'none';
+			}
+		})
+		ini8.addEventListener('click', function(){
+
+			if(ini8.style.cursor=='pointer'){
+
+				respostas.type = 'number';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = 'I - 8';
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'none';
+				initext4.style.display = 'none';
+				initext5.style.display = 'none';
+				initext6.style.display = 'none';
+				initext7.style.display = 'none';
+				initext8.style.display = 'block';
+				initext9.style.display = 'none';
+			}
+		})
+		ini9.addEventListener('click', function(){
+
+			if(ini9.style.cursor=='pointer'){
+
+				respostas.type = 'text';
+				niveisIni.style.display = 'none';
+				qstIni.style.display = 'flex';
+				cont.innerText = 'I - 9';
+				proximo.style.border = 'solid red';
+				proximo.style.cursor = 'inherit';
+				respostas.style.border = 'solid';
+				respostas.value = "";
+				correta.style.display = 'none';
+				initext1.style.display = 'none';
+				initext2.style.display = 'none';
+				initext3.style.display = 'none';
+				initext4.style.display = 'none';
+				initext5.style.display = 'none';
+				initext6.style.display = 'none';
+				initext7.style.display = 'none';
+				initext8.style.display = 'none';
+				initext9.style.display = 'block';
+			}
+		})
+
+		normal1.addEventListener('click', function(){
+			if(normal1.style.cursor=='pointer'){
+
+
+				respostas.type = 'text';
+				niveisNormal.style.display = 'none';
+				qstNormal.style.display = 'flex';
+
+			   normaltext1.style.display = 'block';
+
+			}
+
+		})
+
+		normal1.addEventListener('click', function(){
+			if(normal2.style.cursor=='pointer'){
+
+
+				respostas.type = 'text';
+				niveisNormal.style.display = 'none';
+				qstNormal.style.display = 'flex';
+
+			   normaltext2.style.display = 'block';
+
+			}
+
+		})
+
+		conferir2.addEventListener('click', function(){
+				if(cont2.innerText == "N - 1"){
+					let rsp = resposta2.value;
+
+					if(rsp != "quarta") {
+						 correta2.style.display = 'none';
+						 incorreta2.style.display = 'block';
+						 respostas2.style.border = "solid red";
+						 setTimeout(function(){
+	 							incorreta2.style.display = 'none';
+	 							respostas2.style.border = "solid";
+	 						},3000);
+					}
+
+
+					if(rsp == "quarta"){
+						correta2.style.display = 'block';
+						incorreta2.style.display = 'none';
+						resposta2.style.border = "solid green";
+						normal2.style.background = "white";
+						normal2.style.cursor = "pointer";
+						proximo2.style.border = "solid green";
+						proximo2.style.cursor = "pointer";
+					}
+				}
+
+			
+
+		})
+
+		proximo2.addEventListener('click', function(){
+			if(proximo2.style.cursor = "pointer"){
+				normaltext2.style.display = "block";
+				normaltext1.style.display = "none";
+			}
+		})
+
+		voltar2.addEventListener('click', function(){
+			qstNormal.style.display = 'none';
+			niveisNormal.style.display = 'block'
+
+
+		})
+		conferir.addEventListener('click', function(){
+
+			if(cont.innerText=="I - 1"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=5){
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==5){
+
+					ini2.style.background = "white";
+					ini2.style.cursor = "pointer";
+					proximo.style.border = "solid green";
+					proximo.style.cursor = "pointer";
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					respostas.style.border = "solid green";
+				}
+
+			}
+
+			if(cont.innerText=="I - 2"){
+
+				let rsp = respostas.value;
+
+				if(rsp!="oeste" || rsp!="Oeste"){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp=="oeste" || rsp=="Oeste" || rsp=="OESTE"){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini3.style.background = "white";
+					ini3.style.cursor = "pointer";
+				}
+			}
+
+			if(cont.innerText=="I - 3"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=3){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==3){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini4.style.background = "white";
+					ini4.style.cursor = "pointer";
+
+				}
+			}
+
+			if(cont.innerText=="I - 4"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=""){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==""){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini5.style.background = "white";
+					ini5.style.cursor = "pointer";
+				}
+			}
+
+			if(cont.innerText=="I - 5"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=16){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==16){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini6.style.background = "white";
+					ini6.style.cursor = "pointer";
+				}
+			}
+
+			if(cont.innerText=="I - 6"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=0){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==0){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini7.style.background = "white";
+					ini7.style.cursor = "pointer";
+				}
+			}
+
+			if(cont.innerText=="I - 7"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=2){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==2){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini8.style.background = "white";
+					ini8.style.cursor = "pointer";
+				}
+			}
+
+			if(cont.innerText=="I - 8"){
+
+				let rsp = respostas.value;
+
+				if(rsp!=81){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+						},3000);
+				}
+
+				if(rsp==81){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini9.style.background = "red";
+					ini9.style.cursor = "pointer";
+				}
+			}
+
+			if(cont.innerText=="I - 9"){
+
+				let rsp = respostas.value;
+
+				if(rsp!="m" ){
+
+					correta.style.display = 'none';
+					incorreta.style.display = 'block';
+					respostas.style.border = "solid red";
+					setTimeout(function(){
+							incorreta.style.display = 'none';
+							respostas.style.border = 'solid';
+
+						},3000);
+				}
+
+				if(rsp=="m" || rsp=="M"){
+
+					incorreta.style.display = 'none';
+					correta.style.display = 'block';
+					proximo.style.border = 'solid green';
+					proximo.style.cursor = 'pointer';
+					respostas.style.border = 'solid green';
+					ini7.style.background = "white";
+					ini7.style.cursor = "pointer";
+					normal.style.background = 'white';
+					normal.style.cursor = "pointer";
+					qstIni.style.display = 'none';
+					niveis.style.display = 'block';
+					document.body.style = "background-image: url('uni_fundo.jpg')";
+
+				}
+			}
+
+		})
+
+	</script>
+</body>
+</html>
